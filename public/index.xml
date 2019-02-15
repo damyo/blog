@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Burning Beans</title>
+    <link>/</link>
+    <description>Recent content on Burning Beans</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>kr-KO</language>
+    <managingEditor>master@damyo.co.kr (damyo)</managingEditor>
+    <webMaster>master@damyo.co.kr (damyo)</webMaster>
+    <lastBuildDate>Tue, 12 Feb 2019 00:25:59 +0900</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>마우스 휠의 방향에 상관없이 컨텐츠를 가로로 스크롤하기</title>
+      <link>/post/%EB%A7%88%EC%9A%B0%EC%8A%A4-%ED%9C%A0%EC%9D%98-%EB%B0%A9%ED%96%A5%EC%97%90-%EC%83%81%EA%B4%80%EC%97%86%EC%9D%B4-%EC%BB%A8%ED%85%90%EC%B8%A0%EB%A5%BC-%EA%B0%80%EB%A1%9C%EB%A1%9C-%EC%8A%A4%ED%81%AC%EB%A1%A4%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Tue, 12 Feb 2019 00:25:59 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/post/%EB%A7%88%EC%9A%B0%EC%8A%A4-%ED%9C%A0%EC%9D%98-%EB%B0%A9%ED%96%A5%EC%97%90-%EC%83%81%EA%B4%80%EC%97%86%EC%9D%B4-%EC%BB%A8%ED%85%90%EC%B8%A0%EB%A5%BC-%EA%B0%80%EB%A1%9C%EB%A1%9C-%EC%8A%A4%ED%81%AC%EB%A1%A4%ED%95%98%EA%B8%B0/</guid>
+      <description>&amp;nbsp;마우스 휠은 기본적으로 상하 방향으로 움직인다. 하지만 터치 디바이스 또는 터치 인터페이스를 가진 입력 장치들의 경우 좌우 방향으로도 조작이 가능하다. 이를테면 애플의 매직 마우스가 그러하다. 보통의 웹 컨텐츠들은 스크롤을 통한 상하 이동으로 컨텐츠를 확인하게 되고</description>
+    </item>
+    
+    <item>
+      <title>iOS에서 레이어 화면의 스크롤 이슈</title>
+      <link>/post/ios%EC%97%90%EC%84%9C-%EB%A0%88%EC%9D%B4%EC%96%B4-%ED%99%94%EB%A9%B4%EC%9D%98-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EC%9D%B4%EC%8A%88/</link>
+      <pubDate>Fri, 01 Feb 2019 15:56:07 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/post/ios%EC%97%90%EC%84%9C-%EB%A0%88%EC%9D%B4%EC%96%B4-%ED%99%94%EB%A9%B4%EC%9D%98-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EC%9D%B4%EC%8A%88/</guid>
+      <description>iOS Safari에서는 더이상 스크롤 될 공간이 없어도 계속해서 스크롤 이벤트가 발생한다. 이렇게 이벤트가 일어나는 중에 추가로 스크롤 제스쳐를 취해도 이전 스크롤 이벤트가 무시되는 것이 아니라 오히려 연장된다. 완전히 스크롤 이벤트가 끝났을 때는 다시 스크롤이 작동하게 된다. 위</description>
+    </item>
+    
+    <item>
+      <title>나만의 NPM 모듈 만들기</title>
+      <link>/post/%EB%82%98%EB%A7%8C%EC%9D%98-npm-%EB%AA%A8%EB%93%88-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
+      <pubDate>Fri, 01 Feb 2019 15:37:48 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/post/%EB%82%98%EB%A7%8C%EC%9D%98-npm-%EB%AA%A8%EB%93%88-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
+      <description>npm init을 통해 package.json 파일 생성 package.json 파일에 다음 항목 추가 &amp;ldquo;engines&amp;rdquo;: { &amp;ldquo;node&amp;rdquo;: &amp;ldquo;&amp;gt;= 10.0.0&amp;rdquo; }, &amp;quot;bin&amp;quot;: { &amp;quot;fedeg&amp;quot;: &amp;quot;index.js&amp;quot; }, &amp;quot;preferGlobal&amp;quot;: true Buy me a coffee</description>
+    </item>
+    
+    <item>
+      <title>Layout Shuffle</title>
+      <link>/post/layout-shuffle/</link>
+      <pubDate>Wed, 21 Nov 2018 13:41:26 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/post/layout-shuffle/</guid>
+      <description>&amp;nbsp;여느 때처럼 반응형 웹 프로젝트를 진행하게 되었다. 그리고 언제나 그렇듯 디자인은 PC(또는 모바일) 버전만 받을 수 있었다. 나머지는 되는대로 전달해주겠다는 것인데&amp;hellip; 쪽대본으로 연기를 하는 배우들이 이런 심정일까? 이제는 그냥 그러려니 하고 무덤</description>
+    </item>
+    
+    <item>
+      <title>Connected Line Generator</title>
+      <link>/post/connected-line-generator/</link>
+      <pubDate>Wed, 21 Nov 2018 12:17:44 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/post/connected-line-generator/</guid>
+      <description>&amp;nbsp;얼마 전 참여했던 프로젝트에서 디자인 요소 중 하나인 라인과 관련해 이슈가 있었다. 디자인에서는 제품의 특정 부분과 그 부분에 대한 상세 이미지를 선으로 이어 연관성을 표시하고 있었는데, 해당 프로젝트는 반응형이었고, 브라우저의 크기에 따라 제품 이미지와 상세 이미지</description>
+    </item>
+    
+    <item>
+      <title>Docker와 GitLab으로 Git Repository 만들기</title>
+      <link>/post/docker%EC%99%80-gitlab%EC%9C%BC%EB%A1%9C-git-repository-%EB%A7%8C%EB%93%A4%EA%B8%B0/</link>
+      <pubDate>Tue, 20 Nov 2018 13:32:03 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/post/docker%EC%99%80-gitlab%EC%9C%BC%EB%A1%9C-git-repository-%EB%A7%8C%EB%93%A4%EA%B8%B0/</guid>
+      <description>Docker? 참고 사이트 https://parkminkyu.github.io/docker/01-docker.html https://lovemewithoutall.github.io/it/start-docker/ https://teamsmiley.github.io/2018/09/06/docker-gitlab/ &amp;nbsp; docker-machine create gitForDfy ​ GitLab? 설치하기 Docker for mac 다운로드 및 설치(가입 필요) VirtualBox for OS X hosts 다운로드 및 설치 docker-compose 설치 직접 생성 후 설정까지 CLI를 통해 입력해줄 수도 있지만 편의를 위해 docker-compose를 이용합니다. Mac OS의 경우 1번에서 다운로드 받은 Docker 설치 파</description>
+    </item>
+    
+    <item>
+      <title>Hugo와 Firebase를 이용한 정적인 웹사이트 구축하기</title>
+      <link>/post/hugo%EC%99%80-firebase%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%A0%95%EC%A0%81%EC%9D%B8-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Tue, 20 Nov 2018 10:16:33 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/post/hugo%EC%99%80-firebase%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%A0%95%EC%A0%81%EC%9D%B8-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/</guid>
+      <description>Hugo? Hugo는 Static Generator로, 정적인 웹사이트를 생성해주는 도구입니다. 정적인 웹사이트는 쉽게 말해 서버에 의해 별도로 데이터를 가공하거나 생성하는 과정 없이 그저 저장된 파일(HTML, CSS, Javascript)을 보여주는 방식이라고 할 수 있습니다. 동적인 웹</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Mon, 11 Feb 2019 14:04:48 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/about/</guid>
+      <description>Hello, World! &amp;nbsp;1984년 1월 14일, 어머니의 판단 미스로 병원이 아닌 푸세식 화장실에서 태어났다. 벽에 똥칠 할 때까지 오래 살 거라는 찬양이 끊이지 않았다고 한다. 깜찍한 외모로 주변 사람들에게 많은 사랑을 받고 자랐으나, 지금은 어머니에게 &amp;ldquo;귀엽던 내 아들을</description>
+    </item>
+    
+  </channel>
+</rss>

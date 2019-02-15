@@ -1,0 +1,66 @@
+baseurl         = "/"
+theme           = "hugo-casper-two"
+title						= "Burning Beans"
+languageCode    = "ko-KR"
+disqusShortname = "burningbeans"
+paginate        = 13
+#SectionPagesMenu = "main"
+canonifyurls    = true
+hasCJKLanguage	= true
+summarylength		= 120
+
+[author]
+	name = "damyo"
+	email = "master@damyo.co.kr"
+
+[params]
+  title       = "Burning Beans"
+  subtitle    = "번갯불에 콩 구워 먹기"
+	copyright   = "© 2019"
+
+  cover       = "img/cover.jpg"
+  description = "질질 끌고 미루다가 아무것도 남기지 못하는 것 보다는, 다소 엉성하고 보잘 것 없더라도 일단 실행하고 보는게 좋지 않을까? 버닝빈즈는 이런 생각에서 시작된 기술 블로그입니다."
+  metaDescription = ""
+  googleAnalytics = "UA-134426711-1"
+  customCSS = []
+  RSSLink = ""
+
+  twitterName = ""
+  fbName = ""
+  githubName = "damyo"
+	linkedinName = "damyo"
+  mediumName = ""
+
+  # logo = "Burning Beans"
+  orgName = "Burning Beans"
+  orgWebsite = "https://burningbeans.io"
+  orgDescription = "Just do it."
+
+  author = "damyo"
+  authorAvatar = "img/damyo.jpg"
+  authorLocation = "Seoul, South Korea"
+  authorWebsite = "https://burningbeans.io"
+  authorDescription = "공상을 바탕으로 환상적인 것들을 만들고 싶은 프론트엔드 개발자"
+
+  pageNotFoundTitle = "404 - Page not found"
+
+  #casper or caspertwo
+  singleViewStyle = "casper"
+
+[permalinks]
+  post = "/post/:slug/"
+
+[[menu.main]]
+  name = "Blog"
+  url = "/post/"
+  weight = 200
+
+[[menu.main]]
+  name = "Playground"
+  url = "/categories/playground/"
+  weight = 150
+
+[[menu.main]]
+  name = "Work For me"
+  url = "/categories/work-for-me/"
+  weight = 100

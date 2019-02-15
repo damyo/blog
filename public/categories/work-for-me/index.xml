@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Work for Me on Burning Beans</title>
+    <link>/categories/work-for-me/</link>
+    <description>Recent content in Work for Me on Burning Beans</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>kr-KO</language>
+    <managingEditor>master@damyo.co.kr (damyo)</managingEditor>
+    <webMaster>master@damyo.co.kr (damyo)</webMaster>
+    <lastBuildDate>Tue, 12 Feb 2019 00:25:59 +0900</lastBuildDate>
+    
+	<atom:link href="/categories/work-for-me/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>마우스 휠의 방향에 상관없이 컨텐츠를 가로로 스크롤하기</title>
+      <link>/post/%EB%A7%88%EC%9A%B0%EC%8A%A4-%ED%9C%A0%EC%9D%98-%EB%B0%A9%ED%96%A5%EC%97%90-%EC%83%81%EA%B4%80%EC%97%86%EC%9D%B4-%EC%BB%A8%ED%85%90%EC%B8%A0%EB%A5%BC-%EA%B0%80%EB%A1%9C%EB%A1%9C-%EC%8A%A4%ED%81%AC%EB%A1%A4%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Tue, 12 Feb 2019 00:25:59 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/post/%EB%A7%88%EC%9A%B0%EC%8A%A4-%ED%9C%A0%EC%9D%98-%EB%B0%A9%ED%96%A5%EC%97%90-%EC%83%81%EA%B4%80%EC%97%86%EC%9D%B4-%EC%BB%A8%ED%85%90%EC%B8%A0%EB%A5%BC-%EA%B0%80%EB%A1%9C%EB%A1%9C-%EC%8A%A4%ED%81%AC%EB%A1%A4%ED%95%98%EA%B8%B0/</guid>
+      <description>&amp;nbsp;마우스 휠은 기본적으로 상하 방향으로 움직인다. 하지만 터치 디바이스 또는 터치 인터페이스를 가진 입력 장치들의 경우 좌우 방향으로도 조작이 가능하다. 이를테면 애플의 매직 마우스가 그러하다. 보통의 웹 컨텐츠들은 스크롤을 통한 상하 이동으로 컨텐츠를 확인하게 되고</description>
+    </item>
+    
+    <item>
+      <title>iOS에서 레이어 화면의 스크롤 이슈</title>
+      <link>/post/ios%EC%97%90%EC%84%9C-%EB%A0%88%EC%9D%B4%EC%96%B4-%ED%99%94%EB%A9%B4%EC%9D%98-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EC%9D%B4%EC%8A%88/</link>
+      <pubDate>Fri, 01 Feb 2019 15:56:07 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/post/ios%EC%97%90%EC%84%9C-%EB%A0%88%EC%9D%B4%EC%96%B4-%ED%99%94%EB%A9%B4%EC%9D%98-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EC%9D%B4%EC%8A%88/</guid>
+      <description>iOS Safari에서는 더이상 스크롤 될 공간이 없어도 계속해서 스크롤 이벤트가 발생한다. 이렇게 이벤트가 일어나는 중에 추가로 스크롤 제스쳐를 취해도 이전 스크롤 이벤트가 무시되는 것이 아니라 오히려 연장된다. 완전히 스크롤 이벤트가 끝났을 때는 다시 스크롤이 작동하게 된다. 위</description>
+    </item>
+    
+  </channel>
+</rss>

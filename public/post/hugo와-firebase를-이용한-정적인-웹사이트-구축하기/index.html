@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="kr-KO" />
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>Hugo와 Firebase를 이용한 정적인 웹사이트 구축하기 &middot; Burning Beans</title>
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+    <link rel="canonical" href="/post/hugo%EC%99%80-firebase%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%A0%95%EC%A0%81%EC%9D%B8-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/" />
+
+     <meta name="description" content="Hugo? Hugo는 Static Generator로, 정적인 웹사이트를 생성해주는 도구입니다. 정적인 웹사이트는 쉽게 말해 서버에 의해 별도로 데이터를 가공하거나 생성하는 과정 없이 그저 저장된 파일(HTML, CSS, Javascript)을 보여주는 방식이라고 할 수 있습니다. 동적" /> 
+
+     
+    
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:image" content="/img/post/hugo_with_firebase.jpg"/>
+    
+ 
+    <meta name="twitter:title" content="Hugo와 Firebase를 이용한 정적인 웹사이트 구축하기"/>
+    <meta name="twitter:description" content="Hugo? Hugo는 Static Generator로, 정적인 웹사이트를 생성해주는 도구입니다. 정적인 웹사이트는 쉽게 말해 서버에 의해 별도로 데이터를 가공하거나 생성하는 과정 없이 그저 저장된 파일(HTML, CSS, Javascript)을 보여주는 방식이라고 할 수 있습니다. 동적"/>
+    <meta name="twitter:url" content="/post/hugo%EC%99%80-firebase%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%A0%95%EC%A0%81%EC%9D%B8-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/" />
+    <meta name="twitter:site" content="@"/>
+
+    <meta property="og:site_name" content="Burning Beans" />
+    <meta property="og:title" content="Hugo와 Firebase를 이용한 정적인 웹사이트 구축하기 &middot; Burning Beans" />
+    <meta property="og:url" content="/post/hugo%EC%99%80-firebase%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%A0%95%EC%A0%81%EC%9D%B8-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/" />
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:description" content="Hugo? Hugo는 Static Generator로, 정적인 웹사이트를 생성해주는 도구입니다. 정적인 웹사이트는 쉽게 말해 서버에 의해 별도로 데이터를 가공하거나 생성하는 과정 없이 그저 저장된 파일(HTML, CSS, Javascript)을 보여주는 방식이라고 할 수 있습니다. 동적" />
+
+    <meta property="article:published_time" content="2018-11-20T10:16:33&#43;09:00" />
+    <meta property="article:tag" content="hugo" /><meta property="article:tag" content="firebase" />
+
+    <meta property="og:image" content="/img/post/hugo_with_firebase.jpg"/>
+
+
+    <meta name="generator" content="Hugo 0.51" />
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/built/screen.css" /> 
+    <link rel="stylesheet" type="text/css" href="/css/casper-two.css" /> 
+    <link rel="stylesheet" type="text/css" href="/css/custom.css" /> 
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/monokai-sublime.min.css" />
+    
+
+     
+
+</head>
+
+
+<body class="post-template">
+  <div class="site-wrapper"> 
+
+<header class="site-header outer">
+  <div class="inner">
+    <nav class="site-nav">
+      <div class="site-nav-left">
+        <a class="site-nav-logo" href="/">
+          Burning Beans
+        </a>
+        <ul class="nav" role="menu">
+        
+        
+        
+            <li class="" role="menuitem">
+              <a href="/about/">About</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/post/">Blog</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/categories/playground/">Playground</a>
+            </li>
+        
+            <li class="" role="menuitem">
+              <a href="/categories/work-for-me/">Work For me</a>
+            </li>
+        
+      </ul></div>
+
+      <div class="site-nav-right">
+        <div class="social-links">
+                    
+
+                    
+
+                    <a class="social-link" href="https://github.com/damyo" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+
+                    <a class="social-link" href="https://www.linkedin.com/in/damyo" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 50 512 512"><path d="M150.65,100.682c0,27.992-22.508,50.683-50.273,50.683c-27.765,0-50.273-22.691-50.273-50.683 C50.104,72.691,72.612,50,100.377,50C128.143,50,150.65,72.691,150.65,100.682z M143.294,187.333H58.277V462h85.017V187.333z M279.195,187.333h-81.541V462h81.541c0,0,0-101.877,0-144.181c0-38.624,17.779-61.615,51.807-61.615 c31.268,0,46.289,22.071,46.289,61.615c0,39.545,0,144.181,0,144.181h84.605c0,0,0-100.344,0-173.915 s-41.689-109.131-99.934-109.131s-82.768,45.369-82.768,45.369V187.333z" /></svg></a>
+
+                    
+        </div>  
+            
+      </div>
+
+    </nav>  
+
+  </div>
+</header>
+
+<main id="site-main" class="site-main outer" role="main">
+  <div class="inner">
+    
+      <article class="post-full post"> 
+    <header class="post-full-header">
+        <section class="post-full-meta">
+            <time class="post-full-meta-date" datetime="2018-11-20">2018.11.20 </time>
+                <span class="date-divider">/</span> <a href="/tags/hugo/">#hugo</a>&nbsp;<a href="/tags/firebase/">#firebase</a>&nbsp;
+        </section>
+        <h1 class="post-full-title">Hugo와 Firebase를 이용한 정적인 웹사이트 구축하기</h1>
+    </header>
+    
+    <figure class="post-full-image" style="background-image: url(/img/post/hugo_with_firebase.jpg)">
+    </figure>
+
+    <section class="post-full-content">
+        <div class="kg-card-markdown">
+        
+
+<h2 id="hugo">Hugo?</h2>
+
+<p>Hugo는 Static Generator로, 정적인 웹사이트를 생성해주는 도구입니다.<br />
+정적인 웹사이트는 쉽게 말해 서버에 의해 별도로 데이터를 가공하거나 생성하는 과정 없이 그저 저장된 파일(HTML, CSS, Javascript)을 보여주는 방식이라고 할 수 있습니다.<br />
+동적인 웹사이트의 경우 사용자의 요청에 의해 데이터가 변경되어 새롭게 생성된 데이터(화면)을 볼 수 있지만, 정적인 웹사이트는 서버에 저장된 데이터가 직접적으로 변경되지 않는 이상 고정된 데이터만 보여줍니다.<br />
+대표적인 Static Generator로는 Github에서 공식적으로 사용하는 Jekyll이 있으며, Gatsby, Hexo 등 새로운 도구들이 계속하여 등장하고 있습니다.</p>
+
+<p>Hugo는 구글의 Go 언어로 만들어졌습니다.<br />
+하지만 Go 언어를 알아야 할 필요는 없습니다.<br />
+그저 Hugo Cli를 통해 몇가지 명령어만 입력하면 페이지 및 포스트를 생성할 수 있습니다.<br />
+개인적으로 Jekyll이나 다른 Static Generator는 사용해 보지 못했습니다.<br />
+Jekyll는 아주 오래전에 설치를 시도해 본 기억은 있는데 사용한 기억이 없는 걸 보면 무슨 이유에서인지 잘 되지 않았던 것 같습니다.<br />
+하지만 Hugo는 안내에 따라 쉽게 설치 및 사용이 가능했습니다.<br />
+무엇보다 Firebase에 잘 어울리는 도구인 것 같아 마음에 듭니다.<br />
+근거는 없습니다. 그냥 기분이가 그렇다는 겁니다.</p>
+
+<h2 id="firebase">Firebase?</h2>
+
+<p>Firebase는 백엔드 서버의 기능을 갖춘 클라우드 서비스입니다.<br />
+현재는 구글에서 인수하여 운영되고 있으며, Authentication, Database, Storage, Hosting, Functions, ML Kit과 같은다양한 기능들을 제공하고 있습니다.<br />
+Firebase의 장점은 AWS에 비해 월등히 쉬운 접근성에 있다고 생각합니다.<br />
+물론 AWS는 어려운만큼 제공하는 기능 역시 훨씬 많겠지만, 닭 잡는데 소 잡는 칼을 쓸 필요가 있을까요?<br />
+Firebase는 과금정책 역시 매력적입니다.<br />
+어지간해서는 비용 지불 없이 무료로 사용할 수 있으며, 만약 비용이 발생한다면 Firebase를 이용해서 배포한 당신의 서비스가 그만큼 성공했다는 반증이니 기쁜 마음으로 지불할 수 있으리라 생각합니다.<br />
+앞서 말한 것처럼 다양한 기능을 제공하지만, 일단 우리는 그 중에서도 Hosting만 사용할 겁니다.<br />
+우리의 목적인 정적인 웹사이트 구축은 Hosting만 있으면 충분하니까요.<br />
+만약 비공개 사이트를 계획하고 있거나 회원을 관리하고 싶다면, Authentication를 이용하면 됩니다.<br />
+구글은 물론이고, Facebook, Twitter, GitHub 같은 다른 플랫폼의 회원 정보를 이용하여 방문자를 덜 귀찮게 할 수 있고, 이메일과 전화번호를 이용한 당신만의 회원 관리 시스템을 구축할 수도 있습니다.<br />
+Firebase에서 다 만들어놨으니 그냥 가져다 쓰기만 하면 되요.<br />
+아, Firebase를 추천하는 이유 중에 하나를 빠트렸네요.<br />
+바로 갓구글님이 운영 관리한다는 점 입니다.<br />
+회원 정보나 기타 민감한 데이터들 관리하며, 해킹과 같은 끊이지 않는 보안 이슈에 대응하며 것은 여간 어려운 일이 아닌데요.<br />
+그냥 구글에 맡기세요.<br />
+혹시 사고가 발생해도 훌륭한 면죄부가 되어줄 겁니다.</p>
+
+<blockquote>
+<p>구글도 못 막는 걸 제가 어떻게 막겠어요?</p>
+</blockquote>
+
+<p>단, Database 서비스를 이용할 경우에는 보안 규칙 설정에 주의하세요.<br />
+이 문제로 문제가 생긴다면 구글 핑계도 소용 없으니까요.</p>
+
+<p class="bmc-wrap">
+<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/burningbeans"><img src="https://www.buymeacoffee.com/assets/img/BMC-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:5px">Buy me a coffee</span></a>
+</p>
+    
+        </div>
+    </section>
+
+    <footer class="post-full-footer">
+      <section class="author-card">
+        <img class="author-profile-image" src="/img/damyo.jpg" alt="Author" />
+        <section class="author-card-content">
+            <h4 class="author-card-name"><a href="/">damyo</a></h4>
+                <p>공상을 바탕으로 환상적인 것들을 만들고 싶은 프론트엔드 개발자</p>
+        </section>
+      </section>
+    </footer>
+</article>
+    
+    
+    
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'burningbeans';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  </div>
+</main>
+
+
+<aside class="read-next outer">
+  <div class="inner">
+    <div class="read-next-feed">      
+      
+<article class="read-next-card" 
+            style="background-image: url(/img/cover.jpg);" >
+    <header class="read-next-card-header">
+        <small class="read-next-card-header-sitetitle">&mdash; Burning Beans &mdash;</small>
+        
+        <h3 class="read-next-card-header-title"><a href="/tags/hugo/">#hugo</a></h3>
+    </header>
+    <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"/></svg>
+    </div>
+
+    <div class="read-next-card-content">
+      
+        <ul>
+          <li><a href="/post/%EB%A7%88%EC%9A%B0%EC%8A%A4-%ED%9C%A0%EC%9D%98-%EB%B0%A9%ED%96%A5%EC%97%90-%EC%83%81%EA%B4%80%EC%97%86%EC%9D%B4-%EC%BB%A8%ED%85%90%EC%B8%A0%EB%A5%BC-%EA%B0%80%EB%A1%9C%EB%A1%9C-%EC%8A%A4%ED%81%AC%EB%A1%A4%ED%95%98%EA%B8%B0/">마우스 휠의 방향에 상관없이 컨텐츠를 가로로 스크롤하기</a></li>            
+        
+          <li><a href="/post/layout-shuffle/">Layout Shuffle</a></li>            
+        
+          <li><a href="/post/ios%EC%97%90%EC%84%9C-%EB%A0%88%EC%9D%B4%EC%96%B4-%ED%99%94%EB%A9%B4%EC%9D%98-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EC%9D%B4%EC%8A%88/">iOS에서 레이어 화면의 스크롤 이슈</a></li>            
+        
+          <li><a href="/post/connected-line-generator/">Connected Line Generator</a></li>            
+        </ul>
+    </div>
+    <footer class="read-next-card-footer">
+      
+        <a href="/tags/hugo/">See all related posts →</a>
+    </footer>
+</article>
+
+
+      
+      <article class="post-card post"> 
+    
+    <a class="post-card-image-link" href="/post/docker%EC%99%80-gitlab%EC%9C%BC%EB%A1%9C-git-repository-%EB%A7%8C%EB%93%A4%EA%B8%B0/">
+      <div class="post-card-image" style="background-image: url(/img/post/docker_with_gitlab.jpg)"></div>
+    </a>
+    
+
+    <div class="post-card-content">
+      <a class="post-card-content-link" href="/post/docker%EC%99%80-gitlab%EC%9C%BC%EB%A1%9C-git-repository-%EB%A7%8C%EB%93%A4%EA%B8%B0/">
+          <header class="post-card-header">
+              <span class="post-card-tags">
+              #docker 
+              #gitlab 
+              #git  </span>
+              
+              <h2 class="post-card-title">Docker와 GitLab으로 Git Repository 만들기</h2>
+          </header>
+          <section class="post-card-excerpt">
+              
+                <p>Docker? 참고 사이트 https://parkminkyu.github.io/docker/01-docker.html https://lovemewithoutall.github.io/it/start-docker/ https://teamsmiley.github.io/2018/09/06/docker-gitlab/ &nbsp; docker-machine create gitForDfy ​ GitLab? 설치하기 Docker for mac 다운로드 및 설치(가입 필요) VirtualBox for OS X hosts 다운로드 및 설치 docker-compose 설치 직접 생성 후 설정까지 CLI를 통해 입력해줄 수도 있지만 편의를 위해 docker-compose를 이용합니다. Mac OS의 경우 1번에서 다운로드 받은 Docker 설치 파 ...  </p>
+              
+          </section>
+      </a>
+
+      <footer class="post-card-meta">
+          <img class="author-profile-image" src="/img/damyo.jpg" alt="Author" />
+          <span class="post-card-author"><a href="/">damyo</a></span>
+      </footer>
+    </div>
+</article>
+      
+      
+    </div>
+  </div>
+</aside>
+
+<div class="floating-header">
+  <div class="floating-header-logo">
+    <a href="/">
+      
+      <span>Burning Beans</span>
+    </a>
+  </div>
+  <span class="floating-header-divider">&mdash;</span>
+  <div class="floating-header-title">Hugo와 Firebase를 이용한 정적인 웹사이트 구축하기</div>
+  <div class="floating-header-share">
+    <div class="floating-header-share-label">Share this<span style="display: inline-block; margin-left: .2em; font-size: 2em;">👉</span>
+    </div>
+    
+    <a class="floating-header-share-tw" href="https://twitter.com/share?text=Hugo%ec%99%80%20Firebase%eb%a5%bc%20%ec%9d%b4%ec%9a%a9%ed%95%9c%20%ec%a0%95%ec%a0%81%ec%9d%b8%20%ec%9b%b9%ec%82%ac%ec%9d%b4%ed%8a%b8%20%ea%b5%ac%ec%b6%95%ed%95%98%ea%b8%b0&amp;url=%2fpost%2fhugo%25EC%2599%2580-firebase%25EB%25A5%25BC-%25EC%259D%25B4%25EC%259A%25A9%25ED%2595%259C-%25EC%25A0%2595%25EC%25A0%2581%25EC%259D%25B8-%25EC%259B%25B9%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EA%25B5%25AC%25EC%25B6%2595%25ED%2595%2598%25EA%25B8%25B0%2f"
+          onclick="window.open(this.href, 'share-twitter', 'width=550,height=235');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M30.063 7.313c-.813 1.125-1.75 2.125-2.875 2.938v.75c0 1.563-.188 3.125-.688 4.625a15.088 15.088 0 0 1-2.063 4.438c-.875 1.438-2 2.688-3.25 3.813a15.015 15.015 0 0 1-4.625 2.563c-1.813.688-3.75 1-5.75 1-3.25 0-6.188-.875-8.875-2.625.438.063.875.125 1.375.125 2.688 0 5.063-.875 7.188-2.5-1.25 0-2.375-.375-3.375-1.125s-1.688-1.688-2.063-2.875c.438.063.813.125 1.125.125.5 0 1-.063 1.5-.25-1.313-.25-2.438-.938-3.313-1.938a5.673 5.673 0 0 1-1.313-3.688v-.063c.813.438 1.688.688 2.625.688a5.228 5.228 0 0 1-1.875-2c-.5-.875-.688-1.813-.688-2.75 0-1.063.25-2.063.75-2.938 1.438 1.75 3.188 3.188 5.25 4.25s4.313 1.688 6.688 1.813a5.579 5.579 0 0 1 1.5-5.438c1.125-1.125 2.5-1.688 4.125-1.688s3.063.625 4.188 1.813a11.48 11.48 0 0 0 3.688-1.375c-.438 1.375-1.313 2.438-2.563 3.188 1.125-.125 2.188-.438 3.313-.875z"/></svg>
+      </a>
+      <a class="floating-header-share-fb" href="https://www.facebook.com/sharer/sharer.php?u=%2fpost%2fhugo%25EC%2599%2580-firebase%25EB%25A5%25BC-%25EC%259D%25B4%25EC%259A%25A9%25ED%2595%259C-%25EC%25A0%2595%25EC%25A0%2581%25EC%259D%25B8-%25EC%259B%25B9%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EA%25B5%25AC%25EC%25B6%2595%25ED%2595%2598%25EA%25B8%25B0%2f"
+          onclick="window.open(this.href, 'share-facebook','width=580,height=296');return false;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M19 6h5V0h-5c-3.86 0-7 3.14-7 7v3H8v6h4v16h6V16h5l1-6h-6V7c0-.542.458-1 1-1z"/></svg>
+      </a>
+  </div>
+
+  <progress class="progress" value="0">
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+  </progress>
+</div>
+
+
+
+<footer class="site-footer outer">
+  <div class="site-footer-content inner">
+    <section class="copyright" style="line-height: 1.3em;">
+      <a href="/">Burning Beans</a> © 2019 <br/>
+      
+    </section>
+    <nav class="site-footer-nav">
+        <a href="/">Latest Posts</a>
+        
+        
+        <a href="https://github.com/damyo" target="_blank" rel="noopener">Github</a>
+        <a href="https://www.linkedin.com/in/damyo" target="_blank" rel="noopener">LinkedIn</a>
+        
+    </nav>
+    <p style="width: 100%; margin: 1em 0 2.5em; line-height: 3em; text-align: center;">
+      <a target="_blank" href="https://www.buymeacoffee.com/burningbeans" title="Buy me a coffee" style="color: #fff;"><span style="font-size: 2.4em; vertical-align: middle;">🥤</span></a>
+    </p>
+  </div>
+</footer>
+
+</div>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+  <!-- Google Analytics -->
+  <script>
+    var _gaq=[['_setAccount','UA-134426711-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+
+
+    <script>
+
+
+
+
+
+$(document).ready(function () {
+    
+    var $postContent = $(".post-full-content");
+    $postContent.fitVids();
+    
+
+    var progressBar = document.querySelector('progress');
+    var header = document.querySelector('.floating-header');
+    var title = document.querySelector('.post-full-title');
+
+    var lastScrollY = window.scrollY;
+    var lastWindowHeight = window.innerHeight;
+    var lastDocumentHeight = $(document).height();
+    var ticking = false;
+
+    function onScroll() {
+        lastScrollY = window.scrollY;
+        requestTick();
+    }
+
+    function onResize() {
+        lastWindowHeight = window.innerHeight;
+        lastDocumentHeight = $(document).height();
+        requestTick();
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(update);
+        }
+        ticking = true;
+    }
+
+    function update() {
+        var trigger = title.getBoundingClientRect().top + window.scrollY;
+        var triggerOffset = title.offsetHeight + 35;
+        var progressMax = lastDocumentHeight - lastWindowHeight;
+
+        
+        if (lastScrollY >= trigger + triggerOffset) {
+            header.classList.add('floating-active');
+        } else {
+            header.classList.remove('floating-active');
+        }
+
+        progressBar.setAttribute('max', progressMax);
+        progressBar.setAttribute('value', lastScrollY);
+
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', onScroll, {passive: true});
+    window.addEventListener('resize', onResize, false);
+
+    update();
+});
+</script>
+</body></html>

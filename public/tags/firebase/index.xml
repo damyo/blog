@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Firebase on Burning Beans</title>
+    <link>/tags/firebase/</link>
+    <description>Recent content in Firebase on Burning Beans</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>kr-KO</language>
+    <managingEditor>master@damyo.co.kr (damyo)</managingEditor>
+    <webMaster>master@damyo.co.kr (damyo)</webMaster>
+    <lastBuildDate>Tue, 20 Nov 2018 10:16:33 +0900</lastBuildDate>
+    
+	<atom:link href="/tags/firebase/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo와 Firebase를 이용한 정적인 웹사이트 구축하기</title>
+      <link>/post/hugo%EC%99%80-firebase%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%A0%95%EC%A0%81%EC%9D%B8-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Tue, 20 Nov 2018 10:16:33 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/post/hugo%EC%99%80-firebase%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%A0%95%EC%A0%81%EC%9D%B8-%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0/</guid>
+      <description>Hugo? Hugo는 Static Generator로, 정적인 웹사이트를 생성해주는 도구입니다. 정적인 웹사이트는 쉽게 말해 서버에 의해 별도로 데이터를 가공하거나 생성하는 과정 없이 그저 저장된 파일(HTML, CSS, Javascript)을 보여주는 방식이라고 할 수 있습니다. 동적인 웹</description>
+    </item>
+    
+  </channel>
+</rss>

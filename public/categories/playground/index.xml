@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Playground on Burning Beans</title>
+    <link>/categories/playground/</link>
+    <description>Recent content in Playground on Burning Beans</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>kr-KO</language>
+    <managingEditor>master@damyo.co.kr (damyo)</managingEditor>
+    <webMaster>master@damyo.co.kr (damyo)</webMaster>
+    <lastBuildDate>Wed, 21 Nov 2018 13:41:26 +0900</lastBuildDate>
+    
+	<atom:link href="/categories/playground/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Layout Shuffle</title>
+      <link>/post/layout-shuffle/</link>
+      <pubDate>Wed, 21 Nov 2018 13:41:26 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/post/layout-shuffle/</guid>
+      <description>&amp;nbsp;여느 때처럼 반응형 웹 프로젝트를 진행하게 되었다. 그리고 언제나 그렇듯 디자인은 PC(또는 모바일) 버전만 받을 수 있었다. 나머지는 되는대로 전달해주겠다는 것인데&amp;hellip; 쪽대본으로 연기를 하는 배우들이 이런 심정일까? 이제는 그냥 그러려니 하고 무덤</description>
+    </item>
+    
+    <item>
+      <title>Connected Line Generator</title>
+      <link>/post/connected-line-generator/</link>
+      <pubDate>Wed, 21 Nov 2018 12:17:44 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/post/connected-line-generator/</guid>
+      <description>&amp;nbsp;얼마 전 참여했던 프로젝트에서 디자인 요소 중 하나인 라인과 관련해 이슈가 있었다. 디자인에서는 제품의 특정 부분과 그 부분에 대한 상세 이미지를 선으로 이어 연관성을 표시하고 있었는데, 해당 프로젝트는 반응형이었고, 브라우저의 크기에 따라 제품 이미지와 상세 이미지</description>
+    </item>
+    
+  </channel>
+</rss>

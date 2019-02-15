@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ios on Burning Beans</title>
+    <link>/tags/ios/</link>
+    <description>Recent content in Ios on Burning Beans</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>kr-KO</language>
+    <managingEditor>master@damyo.co.kr (damyo)</managingEditor>
+    <webMaster>master@damyo.co.kr (damyo)</webMaster>
+    <lastBuildDate>Fri, 01 Feb 2019 15:56:07 +0900</lastBuildDate>
+    
+	<atom:link href="/tags/ios/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>iOS에서 레이어 화면의 스크롤 이슈</title>
+      <link>/post/ios%EC%97%90%EC%84%9C-%EB%A0%88%EC%9D%B4%EC%96%B4-%ED%99%94%EB%A9%B4%EC%9D%98-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EC%9D%B4%EC%8A%88/</link>
+      <pubDate>Fri, 01 Feb 2019 15:56:07 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/post/ios%EC%97%90%EC%84%9C-%EB%A0%88%EC%9D%B4%EC%96%B4-%ED%99%94%EB%A9%B4%EC%9D%98-%EC%8A%A4%ED%81%AC%EB%A1%A4-%EC%9D%B4%EC%8A%88/</guid>
+      <description>iOS Safari에서는 더이상 스크롤 될 공간이 없어도 계속해서 스크롤 이벤트가 발생한다. 이렇게 이벤트가 일어나는 중에 추가로 스크롤 제스쳐를 취해도 이전 스크롤 이벤트가 무시되는 것이 아니라 오히려 연장된다. 완전히 스크롤 이벤트가 끝났을 때는 다시 스크롤이 작동하게 된다. 위</description>
+    </item>
+    
+  </channel>
+</rss>

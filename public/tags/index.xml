@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Burning Beans</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on Burning Beans</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>kr-KO</language>
+    <managingEditor>master@damyo.co.kr (damyo)</managingEditor>
+    <webMaster>master@damyo.co.kr (damyo)</webMaster>
+    <lastBuildDate>Tue, 20 Nov 2018 13:32:03 +0900</lastBuildDate>
+    
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker</title>
+      <link>/tags/docker/</link>
+      <pubDate>Tue, 20 Nov 2018 13:32:03 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Event</title>
+      <link>/tags/event/</link>
+      <pubDate>Tue, 12 Feb 2019 00:25:59 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/tags/event/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Firebase</title>
+      <link>/tags/firebase/</link>
+      <pubDate>Tue, 20 Nov 2018 10:16:33 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/tags/firebase/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>/tags/git/</link>
+      <pubDate>Tue, 20 Nov 2018 13:32:03 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gitlab</title>
+      <link>/tags/gitlab/</link>
+      <pubDate>Tue, 20 Nov 2018 13:32:03 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/tags/gitlab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>/tags/hugo/</link>
+      <pubDate>Tue, 20 Nov 2018 10:16:33 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ios</title>
+      <link>/tags/ios/</link>
+      <pubDate>Fri, 01 Feb 2019 15:56:07 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/tags/ios/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>/tags/javascript/</link>
+      <pubDate>Tue, 12 Feb 2019 00:25:59 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Module</title>
+      <link>/tags/module/</link>
+      <pubDate>Fri, 01 Feb 2019 15:37:48 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/tags/module/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Npm</title>
+      <link>/tags/npm/</link>
+      <pubDate>Fri, 01 Feb 2019 15:37:48 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/tags/npm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wheel</title>
+      <link>/tags/wheel/</link>
+      <pubDate>Tue, 12 Feb 2019 00:25:59 +0900</pubDate>
+      <author>master@damyo.co.kr (damyo)</author>
+      <guid>/tags/wheel/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
